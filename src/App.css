@@ -1,0 +1,14 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  
+}
+
+.container {
+  width: 50%;
+  height: 50%;
+  background-color: lightblue;
+  padding: 20px;
+}
