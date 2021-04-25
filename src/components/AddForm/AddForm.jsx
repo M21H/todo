@@ -1,12 +1,13 @@
 import React from 'react'
+import './AddForm.css'
 import { useDispatch } from 'react-redux'
-import { addTask } from '../redux/totoReducer'
+import { addTask } from '../../redux/totoReducer'
 
-export const Add = () => {
+export const AddForm = () => {
   const dispatch = useDispatch()
 
   const [input, setInput] = React.useState('')
-  
+
   let handleAddTask = () => {
     if (input === '') {
       alert('empty')
@@ -17,8 +18,7 @@ export const Add = () => {
   }
 
   return (
-    <>
-
+    <div className='addForm'>
       <input
         className='input'
         type='text'
@@ -27,9 +27,9 @@ export const Add = () => {
         onChange={e => setInput(e.target.value)}
       />
 
-      <button className='btn' onClick={handleAddTask}>
-        add
-      </button>
-    </>
+      <div className='button'>
+        <button onClick={handleAddTask}>add</button>
+      </div>
+    </div>
   )
 }

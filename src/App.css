@@ -3,12 +3,19 @@
   height: 100vh;
   display: grid;
   place-items: center;
-  
+  background-color: #e3e9ff;
 }
 
 .container {
   width: 50%;
   height: 50%;
-  background-color: lightblue;
-  padding: 20px;
+  background-color: white;
+}
+
+.app__title {
+  display: grid;
+  place-items: center;
+  height: 60px;
+  background-color: #af7eeb;
+  color: white;
 }
