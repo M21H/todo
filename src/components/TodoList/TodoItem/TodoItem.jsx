@@ -1,7 +1,8 @@
+import React from 'react'
 import { useDispatch } from 'react-redux'
 import { deleteTask, toggleIsCompleted } from '../../../redux/totoReducer'
 
-export const TodoItem = ({ text, isCompleted, id }) => {
+export const TodoItem = React.memo(({ text, isCompleted, id }) => {
   const dispatch = useDispatch()
 
   let handleIsCompleted = () => {
@@ -26,4 +27,4 @@ export const TodoItem = ({ text, isCompleted, id }) => {
       </li>
     </>
   )
-}
+})

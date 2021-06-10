@@ -2,14 +2,14 @@ const ADD_TASK = 'ADD_TASK'
 const DELETE_TASK = 'DELETE_TASK'
 const TOGGLE_IS_COMPLETED = 'TOGGLE_IS_COMPLETED'
 
-let initialState = {
+const initialState = {
   tasks: [],
 }
 
 const totoReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TASK: {
-      let newTask = {
+      const newTask = {
         id: Date.now(),
         isCompleted: false,
         text: action.payload,
@@ -31,7 +31,7 @@ const totoReducer = (state = initialState, action) => {
             }
           }
           return task
-        }),
+        }), 
       }
 
     case DELETE_TASK:
