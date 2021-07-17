@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { TodoItem } from './TodoItem/TodoItem'
 
 export const TodoList = () => {
-	const tasks = useSelector(state => state.todos.tasks)
+	const { tasks } = useSelector(({ todos }) => todos)
 	console.log(tasks)
 
 	return (

@@ -8,12 +8,12 @@ export const AddForm = React.memo(() => {
 
 	const [input, setInput] = React.useState('')
 
-	let handleAddTask = () => {
-		if (input === '') {
-			alert('empty')
-		} else {
-			dispatch(addTask(input))
+	const handleAddTask = () => {
+		if (input.trim()) {
+			dispatch(addTask(input.trim()))
 			setInput('')
+		} else {
+			alert('write task')
 		}
 	}
 
@@ -23,12 +23,16 @@ export const AddForm = React.memo(() => {
 				className='input'
 				type='text'
 				placeholder={'write your task'}
+				autoFocus={true}
+				onBlur={handleAddTask}
 				value={input}
 				onChange={e => setInput(e.target.value)}
 			/>
 
 			<div className='button'>
-				<button onClick={handleAddTask}>add</button>
+				<button onClick={handleAddTask} disabled={!input}>
+					add
+				</button>
 			</div>
 		</div>
 	)
